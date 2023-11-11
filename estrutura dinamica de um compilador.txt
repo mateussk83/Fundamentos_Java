@@ -1,0 +1,88 @@
+estrutura dinamica de um compilador - aula 1 -
+
+1. Analise lexica (scanning) -> analisa o fluxo de caracteres e pega somente os tokens 
+
+ex:
+v a l = 10 * val + 1
+
+tokens:
+val=10*val+1
+ 1 2 34 5 6 7
+
+2. Analise Sintatica (parsing) -> anota se as estruturas estão coerentes 
+
+ele verifica se os tokens estão de uma maneira correta e hierarquica 
+
+cria a arvore sintatica
+
+ultima verificação do codigo (Analise Semantica)
+
+3. Analise Semantica(checagem de tipos de dados) -> vai verificar a compatibilidade dos elementos e os tipos de dados 
+
+4. Otimização -> faz as melhorias para o codigo ficar mais eficientet 
+
+5. Geração do Codigo -> faz o codigo de maquina depois das validações e Otimização a partir do codigo fonte
+
+Compilador x Interpretador 
+
+Compilador -> passa por todos os passos de analise de geração de codigo citados que então é carregado e vai a execução -> execução veloz
+
+O programa ele é compilado uma vez e pode ser executado inmeras vezes
+
+Intepretador -> ele executa o codigo fonte por assim dizer ele faz o msm processo de interpretação de codigo e vai executando cada vez que ele interpreta constantemente -> portabilidade alta
+
+Toda vez que o programa é executado ele é interpretado
+
+
+Compilador hibrido com Interpretador -> temos a compilação na primeira parte de transformar o codigo fonte em codigo de maquina porém é criado para uma maquina virtual e como o nivel de complexidade já bastou bastante pois ele já compilou o codigo fonte ai entra o interpretador lendo o codigo de maquina gerado desta maquina virtual ah sim interpretando para a maquina local conseguir executar
+
+
+Compilador é dividido em duas partes fundamentalmente 
+
+Front-end -> dependente da linguagem -> onde tem a an.lexica an.gramatical e an.semantica 
+Back-end -> dependente da maquina -> onde temos a geração de codigo
+
+
+
+ANALISE LEXICA -> Aula 2
+
+- Produzir simbolos terminais 
+
+- Ignorar e descartar simbolos irrelevantes 
+	- espaço em branco
+	- caracteres de tabulação
+	- caracteres de controle
+	- Comentarios
+- Tokens possuem uma estrutura sintatica
+	- identificador = letra com digito e vice e versa
+	- numero = digito 
+	- palavras reservadas = if where for uma letra seguida da outra como por exemplo o if que vem o "i" depois o "f"
+	- simbolos = "=" "&&" "||" "*" "/"
+
+Por que o analisador lexico não é uma parte do analisador sintatico ?
+
+deixaria muito complicado de ser construido
+
+dificultaria a distinção entre palavras reservadas e identificadores
+
+Os Lexemas representam uma gramatica regular 
+
+a analise lexica precisa contemplar as seguintes informações 
+
+* esquadrinhar o código fonte,
+símbolo a símbolo, compondo tokens,
+e classificá-los;
+ eliminar elementos desnecessários
+ao processo de compilação;
+ reconhecer e validar
+números inteiros e reais;
+ reconhecer e validar os elementos
+utilizados como identificadores;
+ prover recursos para que se projete
+um mecanismo de controle
+de erros mais amigável;
+ interagir com o sistema de arquivos.
+
+
+
+

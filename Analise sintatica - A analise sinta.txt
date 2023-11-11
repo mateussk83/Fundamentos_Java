@@ -1,0 +1,78 @@
+Analise sintatica -> A analise sintatica deve 
+comprovar quie a sequencia de tokens cumpre as regras sintaticas da linguagem 
+	identificar erros de sintaxe 
+	compor a estrutura hierarquica dos comandos e expressoes 
+	ex:
+		A / B * C              (A/B) * C em Fortran
+				       A / (B*C) em APL
+	recuperação de erros de sintaxe 
+		importante: não retardar, de forma significativa, o processamento de programas corretos
+
+		
+
+Gramaticas regulares não podem lidar com estruturas aninhadas ou com recursões centrais
+
+O tipo de caracteristicas como um if dentro de um while repetimos muitas vezes coisas como () {} e assim dificultamos ser expressa em uma gramatica regular
+
+Solução: Gramatica Livre de Contexto
+	 especificações sintáticas;
+	 permite uso de geradores automáticos;
+	 o processo de construção pode
+	levar à identificação de ambiguidades;
+	 facilidade em ampliar/modificar
+	a linguagem.
+
+Métodos descendentes (Top Down)
+Constroem a arvore sintatica de cima para baixo	iniciando de um simbolo inicial até chegar na sequencia requerida 
+
+Métodos ascendentes (Bottom Up)
+Constroem a arvore sintatica de baixo para cima ou seja começa na sequencia e vai até o simbolo inicial
+
+ambas começam na esquerda e vai para direita 
+
+parsen drive -> analisador sintatico que chama o analisador lexico a cada processo de interação
+
+RECUPERAÇÂO DE ERROS 
+
+Modo panico 
+	para imendiatamente ou ignora e descarta simbolos até que seja encontrado um token de sicronização
+
+Recuperação de frases
+	ele tenta fazer uma substituição do token até que encontre um que encaixa na frase tentativa de continuar o processo de analise sem parar a sequencia 
+
+Produções de erro 
+	aumenta-se a gramatica, afim de incluir regras de forma a acomodar os erros mais comuns 
+
+Correção global (menos utilizado)
+	um algortimo escolhe a sequencia minima de mundaçãs necerrias para se obter a correçaõ
+
+
+Aula 4 - 
+analisador descendente recursivo -> eles trancrevem as regras de produção em forma de sub-rotina 
+
+
+para cada simbolo nao terminal da regra invocamos uma sub-rotina
+
+para cada simbolo no terminal verificamos se ele ocorre na posição correta no progrma 
+
+Analisador LL(1)
+
+a cadeia de entrada é lido do inicio para o fim da esquerda para a direita
+
+o analisador procura construir uma derivação a partir da esquerda
+
+quando encontramos o primeiro elemento a partir dele que escolhemos uma regra para seguir e o ideal é que exista apenas uma regra para cada elemento inicial 
+
+cada etapa ele considera duas informações
+
+	o nao terminal a ser expandido e 
+	o simbolo corrente da entrada 
+
+e a escolhe é feita a partir de uma tabela 
+
+para a mesma entrada temos uma ou duas regras usadas temos um conflito 
+
+
+
+
+

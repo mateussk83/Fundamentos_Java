@@ -1,0 +1,20 @@
+Fundamentos de Java
+
+WORA(write once, Run anywhere) -> escreva uma vez e execute em qualquer lugar 
+
+Linguagem multiplataforma 
+
+Fizamos o Codigo ele envia para o compilador do Java a JAVAC e Transforma em Bytecode depois envia o bytecode para JVM a Java Virtual Machine que interpreta e 
+manda para o windows ou mac ou linux assim os sistemas operacionais podem entender o codigo fonte 
+
+Codigo Fonte -> JAVAC -> Bytecode -> JVM -> Sistema Operacional
+
+JRE e JDK
+
+JRE(Java Runtime Environment) -> Dentro da JRE temos a JVM, Bibliotecas, Suporte e Recursos dessa forma temos o necessario para rodar o nosso aplicativo 
+utilizamos este cara quando o codigo já esta pronto e apenas precisamos do necessario para executar 
+
+JDK(Java Developement Kit) -> kit de ferramentas necessarias para desenvolver aplicações e o JDK tem o JRE dentro e JavaTools que são ferramentas para desenvolver como 
+o JavaC, Debugger e APIS
+
+ex: Sistema de SuperMercado
